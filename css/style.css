@@ -8638,6 +8638,30 @@ h1, h2, h3, h4, h5,
     position: relative;
     z-index: 1; }
 
+/* About Me 반응형 - 작은 화면에서 사진이 위로 */
+@media (max-width: 991.98px) {
+  .ftco-about .row.d-flex {
+    flex-direction: column !important;
+  }
+  
+  .ftco-about .col-md-6:first-child {
+    order: 1;
+    margin-bottom: 2rem;
+  }
+  
+  .ftco-about .col-md-6:last-child {
+    order: 2;
+  }
+  
+  .ftco-about .col-md-6.pl-md-5 {
+    padding-left: 0 !important;
+  }
+  
+  .ftco-about .img-about {
+    height: 400px;
+  }
+}
+
 .ftco-about ul.about-info {
   display: inline-block;
   padding: 0;
@@ -9682,4 +9706,74 @@ textarea.form-control {
 }
 .publication-links .btn {
   margin: 0;
+}
+
+/* Publications 스타일 */
+.publication-image {
+  min-width: 300px;
+  max-width: 300px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.publication-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.publication-image a {
+  cursor: pointer;
+  display: block;
+  width: 100%;
+}
+
+/* Publications 모바일 반응형 */
+@media (max-width: 767.98px) {
+  .resume-wrap.d-flex {
+    flex-direction: column !important;
+  }
+  
+  .publication-image {
+    min-width: 100% !important;
+    max-width: 100% !important;
+    margin-right: 0 !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  .resume-wrap .text.pl-3 {
+    padding-left: 0 !important;
+  }
+  
+  .resume-wrap .text h2 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  
+  .resume-wrap {
+    margin-bottom: 2rem;
+  }
+  
+  .publication-year-group {
+    margin-bottom: 3rem !important;
+  }
+  
+  .publication-year-group h3,
+  .conference-presentations-year-group h4,
+  .invited-talks-year-group h4 {
+    font-size: 1.2rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .conference-presentations-year-group,
+  .invited-talks-year-group {
+    margin-bottom: 2.5rem !important;
+  }
+  
+  #resume-section .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
