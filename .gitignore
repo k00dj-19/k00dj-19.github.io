@@ -1,0 +1,18 @@
+# macOS
+.DS_Store
+**/.DS_Store
+
+# OMC agent state
+.omc/
+**/.omc/
+
+# LaTeX intermediate (sources + final PDFs are committed; aux files are not)
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+
+# Editor
+*.swp
+*.swo

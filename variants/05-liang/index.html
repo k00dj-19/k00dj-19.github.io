@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kim Dongjin</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; }
+
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    color: #111;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+  }
+
+  #wrap {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 28px 20px 60px;
+  }
+
+  /* ---------- top nav ---------- */
+  #topnav {
+    font-size: 13px;
+    margin-bottom: 22px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+  }
+  #topnav a {
+    margin-right: 10px;
+  }
+
+  /* ---------- header / bio block ---------- */
+  #bio {
+    overflow: hidden; /* clearfix for float */
+    margin-bottom: 24px;
+  }
+  #bio img.photo {
+    float: right;
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    margin: 0 0 10px 20px;
+    border: 1px solid #ccc;
+  }
+  h1.name {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0 0 4px;
+  }
+  .affil {
+    font-size: 14px;
+    color: #333;
+    margin: 0 0 8px;
+  }
+  .contact-line {
+    font-size: 13px;
+    color: #333;
+    margin: 0 0 3px;
+  }
+  .contact-line a {
+    margin-left: 2px;
+  }
+  #bio-text {
+    margin-top: 12px;
+    font-size: 15px;
+  }
+
+  /* ---------- research interests ---------- */
+  .interests-list {
+    margin: 4px 0 0 0;
+    padding: 0 0 0 18px;
+    font-size: 14px;
+    columns: 2;
+    column-gap: 30px;
+  }
+  .interests-list li {
+    margin-bottom: 1px;
+  }
+
+  /* ---------- section headings ---------- */
+  h2.section {
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #aaa;
+    margin: 26px 0 10px;
+    padding-bottom: 3px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  /* ---------- publications ---------- */
+  .year-label {
+    font-size: 14px;
+    font-weight: bold;
+    margin: 16px 0 6px;
+    color: #222;
+  }
+
+  .pub-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .pub-list li {
+    margin-bottom: 9px;
+    padding-left: 14px;
+    text-indent: -14px;
+  }
+  .pub-title {
+    font-weight: bold;
+  }
+  .pub-authors {
+    color: #333;
+  }
+  .pub-authors strong {
+    color: #111;
+    font-weight: bold;
+  }
+  .pub-venue {
+    font-style: italic;
+    color: #444;
+  }
+  .pub-links {
+    font-size: 13px;
+    margin-left: 4px;
+  }
+  .pub-links a {
+    margin-right: 4px;
+  }
+  .pub-note {
+    font-size: 12px;
+    color: #555;
+  }
+
+  /* ---------- education / experience ---------- */
+  table.cv-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 4px;
+  }
+  table.cv-table td {
+    vertical-align: top;
+    padding: 3px 6px 3px 0;
+  }
+  table.cv-table td.date {
+    white-space: nowrap;
+    color: #555;
+    width: 130px;
+    font-size: 13px;
+    padding-top: 4px;
+  }
+  table.cv-table td.detail strong {
+    display: block;
+    font-size: 14px;
+  }
+  table.cv-table td.detail span {
+    color: #444;
+    font-size: 13px;
+  }
+
+  /* ---------- talks ---------- */
+  .talk-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+  }
+  .talk-list li {
+    margin-bottom: 8px;
+    padding-left: 14px;
+    text-indent: -14px;
+  }
+  .talk-venue {
+    font-weight: bold;
+  }
+  .talk-links {
+    font-size: 13px;
+  }
+
+  /* ---------- links ---------- */
+  a {
+    color: #00c;
+    text-decoration: none;
+  }
+  a:visited {
+    color: #551a8b;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  /* ---------- footer ---------- */
+  #footer {
+    margin-top: 40px;
+    border-top: 1px solid #ccc;
+    padding-top: 8px;
+    font-size: 12px;
+    color: #666;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 600px) {
+    #bio img.photo {
+      float: none;
+      display: block;
+      margin: 0 0 12px 0;
+    }
+    .interests-list {
+      columns: 1;
+    }
+    table.cv-table td.date {
+      width: 100px;
+    }
+  }
+</style>
+</head>
+<body>
+<div id="wrap">
+
+  <!-- top nav -->
+  <nav id="topnav">
+    <a href="#bio">Bio</a> ·
+    <a href="#publications">Publications</a> ·
+    <a href="#education">Education</a> ·
+    <a href="#experience">Experience</a> ·
+    <a href="#talks">Talks</a> ·
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- header / bio -->
+  <header id="bio" aria-label="Bio">
+    <img class="photo" src="../../images/about.jpeg" alt="Kim Dongjin">
+
+    <h1 class="name">Kim Dongjin <span style="font-weight:normal;font-size:16px;">김동진</span></h1>
+    <p class="affil">
+      Integrated M.S.–Ph.D. Student &nbsp;|&nbsp;
+      <a href="https://davian.kaist.ac.kr/">DAVIAN Lab</a>, KAIST AI &nbsp;|&nbsp;
+      Advisor: Prof. Jaegul Choo
+    </p>
+    <p class="contact-line">
+      Email: <a href="mailto:dj_kim@kaist.ac.kr">dj_kim@kaist.ac.kr</a>
+      &nbsp;&nbsp;
+      Phone: +82-10-2128-0852
+    </p>
+    <p class="contact-line">
+      <a href="https://www.linkedin.com/in/dongjin-kim-2447952a0/">LinkedIn</a>
+      &nbsp;&nbsp;
+      <a href="https://drive.google.com/file/d/127bTJ8GQunh0UgQpf-zDxb_RNeR0XyL8/view?usp=sharing">CV (PDF)</a>
+    </p>
+
+    <p id="bio-text">
+      I am an integrated M.S.–Ph.D. student in the
+      <a href="https://davian.kaist.ac.kr/">DAVIAN Lab</a> at KAIST AI, advised by
+      Professor Jaegul Choo. My research interests include
+      Vision-Language-Action (VLA), LLM Safety, and various multi-modal learning tasks.
+    </p>
+  </header>
+
+  <main>
+
+  <!-- research interests -->
+  <section aria-labelledby="interests">
+    <h2 class="section" id="interests">Research Interests</h2>
+    <ul class="interests-list">
+      <li>Vision-Language-Action (VLA)</li>
+      <li>LLM Safety</li>
+      <li>Multi-modal learning</li>
+      <li>Video understanding</li>
+      <li>Sound source localization</li>
+    </ul>
+  </section>
+
+  <!-- publications -->
+  <section aria-labelledby="publications">
+    <h2 class="section" id="publications">Publications</h2>
+
+    <div class="year-label">2025</div>
+    <ul class="pub-list">
+      <li>
+        <span class="pub-title">
+          <a href="https://arxiv.org/pdf/2506.18557">Object-aware Sound Source Localization via Audio-Visual Scene Understanding</a>
+        </span><br>
+        <span class="pub-authors">Sung Jin Um*, <strong>Dongjin Kim*</strong>, Sangmin Lee, Jung Uk Kim</span>
+        <span class="pub-note">(*Equal contribution)</span><br>
+        <span class="pub-venue">CVPR 2025</span>
+        <span class="pub-links">
+          [<a href="https://arxiv.org/pdf/2506.18557">pdf</a>]
+          [<a href="https://github.com/VisualAIKHU/OA-SSL">code</a>]
+        </span>
+      </li>
+      <li>
+        <span class="pub-title">
+          <a href="https://arxiv.org/pdf/2501.02504">Watch Video, Catch Keyword: Context-aware Keyword Attention for Moment Retrieval and Highlight Detection</a>
+        </span><br>
+        <span class="pub-authors">Sung Jin Um, <strong>Dongjin Kim</strong>, Sangmin Lee, Jung Uk Kim</span><br>
+        <span class="pub-venue">AAAI 2025</span>
+        <span class="pub-links">
+          [<a href="https://arxiv.org/pdf/2501.02504">pdf</a>]
+          [<a href="https://github.com/VisualAIKHU/Keyword-DETR">code</a>]
+        </span>
+      </li>
+    </ul>
+
+    <div class="year-label">2024</div>
+    <ul class="pub-list">
+      <li>
+        <span class="pub-title">
+          <a href="https://arxiv.org/pdf/2403.17420">Learning to Visually Localize Sound Sources from Mixtures without Prior Source Knowledge</a>
+        </span><br>
+        <span class="pub-authors"><strong>Dongjin Kim*</strong>, Sung Jin Um*, Sangmin Lee, Jung Uk Kim</span>
+        <span class="pub-note">(*Equal contribution)</span><br>
+        <span class="pub-venue">CVPR 2024</span>
+        <span class="pub-links">
+          [<a href="https://arxiv.org/pdf/2403.17420">pdf</a>]
+          [<a href="https://github.com/VisualAIKHU/NoPrior_MultiSSL">code</a>]
+        </span>
+      </li>
+    </ul>
+
+    <div class="year-label">2023</div>
+    <ul class="pub-list">
+      <li>
+        <span class="pub-title">
+          <a href="https://arxiv.org/pdf/2308.06087">Audio-Visual Spatial Integration and Recursive Attention for Robust Sound Source Localization</a>
+        </span><br>
+        <span class="pub-authors">Sung Jin Um*, <strong>Dongjin Kim*</strong>, Jung Uk Kim</span>
+        <span class="pub-note">(*Equal contribution)</span><br>
+        <span class="pub-venue">ACM MM 2023</span>
+        <span class="pub-links">
+          [<a href="https://arxiv.org/pdf/2308.06087">pdf</a>]
+          [<a href="https://github.com/VisualAIKHU/SIRA-SSL">code</a>]
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- education -->
+  <section aria-labelledby="education">
+    <h2 class="section" id="education">Education</h2>
+    <table class="cv-table">
+      <tbody>
+        <tr>
+          <td class="date">2025 – Present</td>
+          <td class="detail">
+            <strong>Integrated M.S.–Ph.D. in Artificial Intelligence, KAIST</strong>
+            <span>DAVIAN Lab &nbsp;|&nbsp; Advisor: Prof. Jaegul Choo</span>
+            <span>Focus: VLA, LLM Safety, multi-modal learning</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="date">2019 – 2025</td>
+          <td class="detail">
+            <strong>B.S. in Computer Science &amp; Engineering, Kyung Hee University</strong>
+            <span>Visual AI Lab &nbsp;|&nbsp; Advisor: Prof. Jung Uk Kim</span>
+            <span>Focus: Multi-modal learning, video understanding, sound source localization</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- experience -->
+  <section aria-labelledby="experience">
+    <h2 class="section" id="experience">Experience</h2>
+    <table class="cv-table">
+      <tbody>
+        <tr>
+          <td class="date">2025.03 – Present</td>
+          <td class="detail">
+            <strong>Integrated M.S.–Ph.D. Student, DAVIAN Lab, KAIST AI</strong>
+            <span>Research on VLA, LLM Safety, and multi-modal learning.</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="date">2024.03 – 2024.08</td>
+          <td class="detail">
+            <strong>AI Engineer, LETSUR (AI Startup)</strong>
+            <span>Development of AI-based services utilizing LLMs and RAG.</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="date">2024.01 – 2024.02</td>
+          <td class="detail">
+            <strong>AI Research Intern, ETRI</strong>
+            <span>Electronics and Telecommunications Research Institute. Research on video moment retrieval and highlight detection.</span>
+          </td>
+        </tr>
+        <tr>
+          <td class="date">2022.11 – 2025.02</td>
+          <td class="detail">
+            <strong>Undergraduate Researcher, Visual AI Lab, Kyung Hee University</strong>
+            <span>Supervisor: Prof. Jung Uk Kim. Published 4 papers (see Publications).</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- talks -->
+  <section aria-labelledby="talks">
+    <h2 class="section" id="talks">Talks &amp; Presentations</h2>
+
+    <p style="font-size:13px;font-weight:bold;margin:10px 0 4px;">Conference Presentations</p>
+    <ul class="talk-list">
+      <li>
+        <span class="talk-venue">CVPR 2025</span>, Nashville, TN —
+        Poster: Object-aware Sound Source Localization via Audio-Visual Scene Understanding
+        <span class="talk-links">
+          [<a href="https://drive.google.com/file/d/1jiWdDW-M36Kz0_FKCIjJUfNUm4NLBTTj/view?usp=sharing">poster pdf</a>]
+        </span>
+      </li>
+      <li>
+        <span class="talk-venue">CVPR 2024</span>, Seattle, WA —
+        Poster: Learning to Visually Localize Sound Sources from Mixtures without Prior Source Knowledge
+        <span class="talk-links">
+          [<a href="https://drive.google.com/file/d/193Kaj39fKGO5P8gANP2YrtEUzGP53D9f/view?usp=sharing">poster pdf</a>]
+        </span>
+      </li>
+      <li>
+        <span class="talk-venue">ACM MM 2023</span>, Ottawa, Canada —
+        Poster: Audio-Visual Spatial Integration and Recursive Attention for Robust Sound Source Localization
+        <span class="talk-links">
+          [<a href="https://drive.google.com/file/d/1hsAtNijwl_e8HYFY-YE4gqDRqW5Z518Z/view?usp=sharing">poster pdf</a>]
+        </span>
+      </li>
+    </ul>
+
+    <p style="font-size:13px;font-weight:bold;margin:10px 0 4px;">Invited Talks</p>
+    <ul class="talk-list">
+      <li>
+        <span class="talk-venue">2025</span> —
+        "My Experience of CVPR Acceptance as an Undergraduate and Advice for Graduate School"<br>
+        NexusAI Cohort 2 Final Seminar, Seoul, South Korea
+        <span class="talk-links">
+          [<a href="https://docs.google.com/presentation/d/1dxXHxFden4PiSRDmVaeSS21DxjGIrmlee7jQmjLEZIk/edit?usp=sharing">slides</a>]
+        </span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- contact -->
+  <section aria-labelledby="contact">
+    <h2 class="section" id="contact">Contact</h2>
+    <table class="cv-table">
+      <tbody>
+        <tr>
+          <td class="date">Email</td>
+          <td class="detail"><a href="mailto:dj_kim@kaist.ac.kr">dj_kim@kaist.ac.kr</a></td>
+        </tr>
+        <tr>
+          <td class="date">Phone</td>
+          <td class="detail">+82-10-2128-0852</td>
+        </tr>
+        <tr>
+          <td class="date">LinkedIn</td>
+          <td class="detail"><a href="https://www.linkedin.com/in/dongjin-kim-2447952a0/">linkedin.com/in/dongjin-kim-2447952a0</a></td>
+        </tr>
+        <tr>
+          <td class="date">CV</td>
+          <td class="detail"><a href="https://drive.google.com/file/d/127bTJ8GQunh0UgQpf-zDxb_RNeR0XyL8/view?usp=sharing">Download PDF</a></td>
+        </tr>
+        <tr>
+          <td class="date">Location</td>
+          <td class="detail">Seoul, South Korea (KAIST AI)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  </main>
+
+  <footer id="footer">
+    Kim Dongjin &nbsp;|&nbsp; DAVIAN Lab, KAIST AI &nbsp;|&nbsp; Last updated June 2026
+  </footer>
+
+</div>
+</body>
+</html>

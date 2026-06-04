@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kim Dongjin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,600;1,8..60,300;1,8..60,400&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ──────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --text:        #222222;
+      --text-light:  #555555;
+      --text-muted:  #888888;
+      --link:        #3d6b9a;
+      --link-hover:  #2a4f73;
+      --border:      #e0e0e0;
+      --bg:          #ffffff;
+      --max-width:   680px;
+      --serif: "Source Serif 4", "et-book", Charter, "Bitstream Charter",
+               "Palatino Linotype", Palatino, Georgia, serif;
+    }
+
+    html { font-size: 18px; }
+
+    body {
+      font-family: var(--serif);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.7;
+      padding: 0 1.25rem;
+    }
+
+    /* ─── Layout ────────────────────────────────────────────────── */
+    .page {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 3.5rem 0 4rem;
+    }
+
+    /* ─── Header ────────────────────────────────────────────────── */
+    header {
+      display: flex;
+      align-items: flex-start;
+      gap: 2rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .header-text { flex: 1; }
+
+    header h1 {
+      font-size: 2.1rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.2rem;
+    }
+
+    .name-korean {
+      font-size: 1rem;
+      color: var(--text-muted);
+      font-weight: 300;
+      margin-bottom: 0.75rem;
+    }
+
+    .affiliation {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+
+    .contact-links {
+      font-size: 0.85rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.2rem 0.1rem;
+    }
+
+    .contact-links a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .contact-links a:hover {
+      color: var(--link-hover);
+      border-bottom-color: var(--link-hover);
+    }
+
+    .contact-links .sep {
+      color: var(--text-muted);
+      padding: 0 0.3rem;
+      user-select: none;
+    }
+
+    .profile-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 4px;
+      object-fit: cover;
+      object-position: top center;
+      flex-shrink: 0;
+      margin-top: 0.25rem;
+      filter: grayscale(8%);
+    }
+
+    /* ─── Bio ───────────────────────────────────────────────────── */
+    .bio {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 2.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 1.75rem;
+    }
+
+    /* ─── Section headings ──────────────────────────────────────── */
+    h2 {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    section { margin-bottom: 3rem; }
+
+    /* ─── Research Interests ────────────────────────────────────── */
+    .interests-list {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.75rem;
+      padding: 0;
+    }
+
+    .interests-list li {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      background: #f4f6f9;
+      padding: 0.2rem 0.65rem;
+      border-radius: 3px;
+    }
+
+    /* ─── Publications ──────────────────────────────────────────── */
+    .pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .pub-year-group + .pub-year-group {
+      margin-top: 0.25rem;
+    }
+
+    .pub-year {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin: 1.5rem 0 0.75rem;
+    }
+
+    .pub-year:first-child { margin-top: 0; }
+
+    .pub-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.9rem 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .pub-item:last-child { border-bottom: none; }
+
+    .pub-thumb {
+      width: 90px;
+      height: 68px;
+      object-fit: cover;
+      border-radius: 3px;
+      border: 1px solid var(--border);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .pub-body { flex: 1; }
+
+    .pub-title {
+      font-size: 0.97rem;
+      font-weight: 600;
+      line-height: 1.4;
+      margin-bottom: 0.25rem;
+      color: var(--text);
+    }
+
+    .pub-authors {
+      font-size: 0.83rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      margin-bottom: 0.2rem;
+    }
+
+    .pub-authors strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .pub-venue {
+      font-style: italic;
+      font-size: 0.83rem;
+      color: var(--text-muted);
+      margin-bottom: 0.35rem;
+    }
+
+    .pub-links {
+      font-size: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.15rem 0.5rem;
+    }
+
+    .pub-links a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .pub-links a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    /* ─── Education ─────────────────────────────────────────────── */
+    .edu-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .edu-item {}
+
+    .edu-period {
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .edu-degree {
+      font-size: 0.97rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .edu-institution {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .edu-detail {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ─── Experience ────────────────────────────────────────────── */
+    .exp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .exp-item {}
+
+    .exp-period {
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 0.15rem;
+    }
+
+    .exp-role {
+      font-size: 0.97rem;
+      font-weight: 600;
+      margin-bottom: 0.1rem;
+    }
+
+    .exp-org {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .exp-detail {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    /* ─── Talks ─────────────────────────────────────────────────── */
+    .talks-subhead {
+      font-size: 0.78rem;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin: 1.5rem 0 0.6rem;
+    }
+
+    .talks-subhead:first-of-type { margin-top: 0; }
+
+    .talk-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.9rem;
+    }
+
+    .talk-item {}
+
+    .talk-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      margin-bottom: 0.15rem;
+    }
+
+    .talk-meta {
+      font-size: 0.83rem;
+      color: var(--text-light);
+      margin-bottom: 0.2rem;
+    }
+
+    .talk-links {
+      font-size: 0.8rem;
+    }
+
+    .talk-links a {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .talk-links a:hover {
+      color: var(--link-hover);
+      text-decoration: underline;
+    }
+
+    /* ─── Footer ────────────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding-top: 1.25rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--text-muted);
+      text-decoration: none;
+    }
+
+    footer a:hover { color: var(--link); }
+
+    /* ─── Responsive ────────────────────────────────────────────── */
+    @media (max-width: 540px) {
+      html { font-size: 16px; }
+
+      header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .profile-photo {
+        width: 80px;
+        height: 80px;
+      }
+
+      .pub-item {
+        flex-direction: column;
+        gap: 0.6rem;
+      }
+
+      .pub-thumb {
+        width: 100%;
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+
+    <!-- ── Header ──────────────────────────────────────────────── -->
+    <header>
+      <div class="header-text">
+        <h1>Kim Dongjin</h1>
+        <p class="name-korean">김동진</p>
+        <p class="affiliation">
+          Integrated M.S.–Ph.D. Student<br>
+          DAVIAN Lab · KAIST AI<br>
+          Advised by Prof. Jaegul Choo
+        </p>
+        <nav class="contact-links" aria-label="Contact and links">
+          <a href="mailto:dj_kim@kaist.ac.kr">dj_kim@kaist.ac.kr</a>
+          <span class="sep">·</span>
+          <a href="https://www.linkedin.com/in/dongjin-kim-2447952a0/" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="sep">·</span>
+          <a href="https://drive.google.com/file/d/127bTJ8GQunh0UgQpf-zDxb_RNeR0XyL8/view?usp=sharing" target="_blank" rel="noopener">CV</a>
+        </nav>
+      </div>
+      <img
+        src="../../images/about.jpeg"
+        alt="Photo of Kim Dongjin"
+        class="profile-photo"
+      />
+    </header>
+
+    <!-- ── Bio ─────────────────────────────────────────────────── -->
+    <p class="bio">
+      I am an integrated M.S.–Ph.D. student in the <a href="https://davian.kaist.ac.kr/" target="_blank" rel="noopener">DAVIAN Lab</a> at KAIST AI,
+      advised by Professor Jaegul Choo. My research interests include
+      Vision-Language-Action (VLA), LLM Safety, and various multi-modal
+      learning tasks.
+    </p>
+
+    <!-- ── Research Interests ───────────────────────────────────── -->
+    <section aria-labelledby="interests-heading">
+      <h2 id="interests-heading">Research Interests</h2>
+      <ul class="interests-list">
+        <li>Vision-Language-Action (VLA)</li>
+        <li>LLM Safety</li>
+        <li>Multi-modal Learning</li>
+        <li>Video Understanding</li>
+        <li>Sound Source Localization</li>
+      </ul>
+    </section>
+
+    <!-- ── Publications ─────────────────────────────────────────── -->
+    <section aria-labelledby="publications-heading">
+      <h2 id="publications-heading">Publications</h2>
+
+      <div class="pub-list">
+
+        <p class="pub-year">2025</p>
+
+        <article class="pub-item">
+          <img
+            src="../../images/publications/2025cvpr.png"
+            alt="Figure for Object-aware Sound Source Localization"
+            class="pub-thumb"
+          />
+          <div class="pub-body">
+            <p class="pub-title">Object-aware Sound Source Localization via Audio-Visual Scene Understanding</p>
+            <p class="pub-authors">Sung Jin Um*, <strong>Dongjin Kim*</strong>, Sangmin Lee, Jung Uk Kim <span style="font-style:italic;font-size:0.78rem">(*Equal contribution)</span></p>
+            <p class="pub-venue">CVPR 2025</p>
+            <p class="pub-links">
+              <a href="https://arxiv.org/pdf/2506.18557" target="_blank" rel="noopener">[Paper]</a>
+              <a href="https://github.com/VisualAIKHU/OA-SSL" target="_blank" rel="noopener">[Code]</a>
+            </p>
+          </div>
+        </article>
+
+        <article class="pub-item">
+          <img
+            src="../../images/publications/2025aaai.png"
+            alt="Figure for Watch Video, Catch Keyword"
+            class="pub-thumb"
+          />
+          <div class="pub-body">
+            <p class="pub-title">Watch Video, Catch Keyword: Context-aware Keyword Attention for Moment Retrieval and Highlight Detection</p>
+            <p class="pub-authors">Sung Jin Um, <strong>Dongjin Kim</strong>, Sangmin Lee, Jung Uk Kim</p>
+            <p class="pub-venue">AAAI 2025</p>
+            <p class="pub-links">
+              <a href="https://arxiv.org/pdf/2501.02504" target="_blank" rel="noopener">[Paper]</a>
+              <a href="https://github.com/VisualAIKHU/Keyword-DETR" target="_blank" rel="noopener">[Code]</a>
+            </p>
+          </div>
+        </article>
+
+        <p class="pub-year">2024</p>
+
+        <article class="pub-item">
+          <img
+            src="../../images/publications/2024cvpr.png"
+            alt="Figure for Learning to Visually Localize Sound Sources"
+            class="pub-thumb"
+          />
+          <div class="pub-body">
+            <p class="pub-title">Learning to Visually Localize Sound Sources from Mixtures without Prior Source Knowledge</p>
+            <p class="pub-authors"><strong>Dongjin Kim*</strong>, Sung Jin Um*, Sangmin Lee, Jung Uk Kim <span style="font-style:italic;font-size:0.78rem">(*Equal contribution)</span></p>
+            <p class="pub-venue">CVPR 2024</p>
+            <p class="pub-links">
+              <a href="https://arxiv.org/pdf/2403.17420" target="_blank" rel="noopener">[Paper]</a>
+              <a href="https://github.com/VisualAIKHU/NoPrior_MultiSSL" target="_blank" rel="noopener">[Code]</a>
+            </p>
+          </div>
+        </article>
+
+        <p class="pub-year">2023</p>
+
+        <article class="pub-item">
+          <img
+            src="../../images/publications/2023acmmm.png"
+            alt="Figure for Audio-Visual Spatial Integration and Recursive Attention"
+            class="pub-thumb"
+          />
+          <div class="pub-body">
+            <p class="pub-title">Audio-Visual Spatial Integration and Recursive Attention for Robust Sound Source Localization</p>
+            <p class="pub-authors">Sung Jin Um*, <strong>Dongjin Kim*</strong>, Jung Uk Kim <span style="font-style:italic;font-size:0.78rem">(*Equal contribution)</span></p>
+            <p class="pub-venue">ACM MM 2023</p>
+            <p class="pub-links">
+              <a href="https://arxiv.org/pdf/2308.06087" target="_blank" rel="noopener">[Paper]</a>
+              <a href="https://github.com/VisualAIKHU/SIRA-SSL" target="_blank" rel="noopener">[Code]</a>
+            </p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ── Education ─────────────────────────────────────────────── -->
+    <section aria-labelledby="education-heading">
+      <h2 id="education-heading">Education</h2>
+      <div class="edu-list">
+
+        <div class="edu-item">
+          <p class="edu-period">2025 – Present</p>
+          <p class="edu-degree">Integrated M.S.–Ph.D. in Artificial Intelligence</p>
+          <p class="edu-institution">KAIST · DAVIAN Lab</p>
+          <p class="edu-detail">Advisor: Prof. Jaegul Choo · Research: VLA, LLM Safety, multi-modal learning</p>
+        </div>
+
+        <div class="edu-item">
+          <p class="edu-period">2019 – 2025</p>
+          <p class="edu-degree">B.S. in Computer Science &amp; Engineering</p>
+          <p class="edu-institution">Kyung Hee University · Visual AI Lab</p>
+          <p class="edu-detail">Advisor: Prof. Jung Uk Kim · Undergraduate researcher · Research: Multi-modal learning, Video Understanding, Sound Source Localization</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Experience ────────────────────────────────────────────── -->
+    <section aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Experience</h2>
+      <div class="exp-list">
+
+        <div class="exp-item">
+          <p class="exp-period">Mar 2025 – Present</p>
+          <p class="exp-role">Integrated M.S.–Ph.D. Student</p>
+          <p class="exp-org">DAVIAN Lab, KAIST AI</p>
+          <p class="exp-detail">Research on VLA, LLM Safety, and multi-modal learning.</p>
+        </div>
+
+        <div class="exp-item">
+          <p class="exp-period">Mar – Aug 2024</p>
+          <p class="exp-role">AI Engineer</p>
+          <p class="exp-org">LETSUR (AI Startup)</p>
+          <p class="exp-detail">Development of AI-based services utilizing LLMs and RAG.</p>
+        </div>
+
+        <div class="exp-item">
+          <p class="exp-period">Jan – Feb 2024</p>
+          <p class="exp-role">AI Research Intern</p>
+          <p class="exp-org">ETRI (Electronics and Telecommunications Research Institute)</p>
+          <p class="exp-detail">Research on Video Moment Retrieval and Highlight Detection.</p>
+        </div>
+
+        <div class="exp-item">
+          <p class="exp-period">Nov 2022 – Feb 2025</p>
+          <p class="exp-role">Undergraduate Researcher</p>
+          <p class="exp-org">Visual AI Lab, Kyung Hee University</p>
+          <p class="exp-detail">Supervisor: Prof. Jung Uk Kim · Published 4 papers at CVPR, AAAI, and ACM MM.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ── Talks & Presentations ─────────────────────────────────── -->
+    <section aria-labelledby="talks-heading">
+      <h2 id="talks-heading">Talks &amp; Presentations</h2>
+
+      <p class="talks-subhead">Conference Presentations</p>
+      <ul class="talk-list">
+
+        <li class="talk-item">
+          <p class="talk-title">Object-aware Sound Source Localization via Audio-Visual Scene Understanding</p>
+          <p class="talk-meta">Poster · CVPR 2025 · Nashville, TN</p>
+          <p class="talk-links"><a href="https://drive.google.com/file/d/1jiWdDW-M36Kz0_FKCIjJUfNUm4NLBTTj/view?usp=sharing" target="_blank" rel="noopener">[Poster PDF]</a></p>
+        </li>
+
+        <li class="talk-item">
+          <p class="talk-title">Learning to Visually Localize Sound Sources from Mixtures without Prior Source Knowledge</p>
+          <p class="talk-meta">Poster · CVPR 2024 · Seattle, WA</p>
+          <p class="talk-links"><a href="https://drive.google.com/file/d/193Kaj39fKGO5P8gANP2YrtEUzGP53D9f/view?usp=sharing" target="_blank" rel="noopener">[Poster PDF]</a></p>
+        </li>
+
+        <li class="talk-item">
+          <p class="talk-title">Audio-Visual Spatial Integration and Recursive Attention for Robust Sound Source Localization</p>
+          <p class="talk-meta">Poster · ACM MM 2023 · Ottawa, Canada</p>
+          <p class="talk-links"><a href="https://drive.google.com/file/d/1hsAtNijwl_e8HYFY-YE4gqDRqW5Z518Z/view?usp=sharing" target="_blank" rel="noopener">[Poster PDF]</a></p>
+        </li>
+
+      </ul>
+
+      <p class="talks-subhead" style="margin-top:1.75rem">Invited Talks</p>
+      <ul class="talk-list">
+
+        <li class="talk-item">
+          <p class="talk-title">"My Experience of CVPR Acceptance as an Undergraduate and Advice for Graduate School"</p>
+          <p class="talk-meta">NexusAI Cohort 2 Final Seminar · 2025 · Seoul, South Korea</p>
+          <p class="talk-links"><a href="https://docs.google.com/presentation/d/1dxXHxFden4PiSRDmVaeSS21DxjGIrmlee7jQmjLEZIk/edit?usp=sharing" target="_blank" rel="noopener">[Slides]</a></p>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ── Footer ───────────────────────────────────────────────── -->
+    <footer>
+      <p>Kim Dongjin · <a href="mailto:dj_kim@kaist.ac.kr">dj_kim@kaist.ac.kr</a> · KAIST AI</p>
+    </footer>
+
+  </div>
+</body>
+</html>

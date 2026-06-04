@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CV — Kim Dongjin</title>
+<style>
+  :root {
+    --ink: #1a1a1a;
+    --muted: #6b6b6b;
+    --rule: #e4e4e4;
+    --bg: #fafaf8;
+    --card: #ffffff;
+    --accent: #1E40AF;
+    --accent-dk: #1E3A8A;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 64px 32px 96px; }
+  header { margin-bottom: 40px; }
+  h1 {
+    font-family: "Source Serif 4", "Source Serif Pro", Charter, Georgia, serif;
+    font-weight: 400;
+    font-size: clamp(36px, 5vw, 52px);
+    line-height: 1.1;
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+  .lede {
+    color: var(--muted);
+    font-size: 17px;
+    max-width: 720px;
+    margin: 0 0 16px;
+  }
+  .meta {
+    font-size: 13px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+  .card {
+    background: var(--card);
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+  }
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 22px rgba(30, 64, 175, 0.08);
+    border-color: #c7c7c7;
+  }
+  .card-preview {
+    aspect-ratio: 8.5 / 11;
+    background: #f6f6f4;
+    border-bottom: 1px solid var(--rule);
+    overflow: hidden;
+    position: relative;
+  }
+  .card-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+  }
+  .card-body {
+    padding: 20px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .card .num {
+    font-family: "Source Serif 4", "Source Serif Pro", Charter, Georgia, serif;
+    font-size: 13px;
+    color: var(--accent);
+    letter-spacing: 0.05em;
+  }
+  .card h2 {
+    font-family: "Source Serif 4", "Source Serif Pro", Charter, Georgia, serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.25;
+  }
+  .card p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 14.5px;
+  }
+  .card-actions {
+    margin-top: 14px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .btn {
+    text-decoration: none;
+    font-size: 13.5px;
+    padding: 8px 14px;
+    border-radius: 6px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    background: transparent;
+    transition: background 0.12s, color 0.12s;
+    font-weight: 500;
+  }
+  .btn:hover { background: var(--accent); color: #fff; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-dk); border-color: var(--accent-dk); }
+  .meta-line {
+    font-size: 12.5px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+  .note {
+    margin-top: 56px;
+    padding: 20px 24px;
+    border-left: 3px solid var(--accent);
+    background: #fff;
+    font-size: 14px;
+    color: var(--muted);
+    border-radius: 0 4px 4px 0;
+  }
+  .note code {
+    background: #f1f1ee;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 13px;
+  }
+  .back-link {
+    display: inline-block;
+    margin-top: 24px;
+    font-size: 13.5px;
+    color: var(--muted);
+    text-decoration: none;
+  }
+  .back-link:hover { color: var(--accent); }
+  footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  @media (max-width: 600px) {
+    .wrap { padding: 40px 20px 64px; }
+    .grid { grid-template-columns: 1fr; gap: 18px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <p class="meta">CV · LaTeX · 2026</p>
+    <h1>Curriculum Vitae</h1>
+    <p class="lede">Three LaTeX-typeset CV styles for the same content. Pick whichever you'd like to download or use as a template. All sources are open — view or fork the <code>.tex</code> files alongside the PDFs.</p>
+  </header>
+
+  <main>
+    <div class="grid">
+
+      <article class="card">
+        <div class="card-preview">
+          <img src="preview-classic.png" alt="Preview of classic CV first page" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="num">01 · Classic</div>
+          <h2>Steinhardt / Liang style</h2>
+          <p>Minimal academic 1-page. Sans-serif headings, serif body, year-grouped publications, equal-contribution markers. The most common look for CS faculty pages.</p>
+          <div class="meta-line">2 pages · 32 KB</div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="classic.pdf" download>Download PDF</a>
+            <a class="btn" href="classic.tex" target="_blank">View .tex</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-preview">
+          <img src="preview-awesome.png" alt="Preview of awesome-cv style CV first page" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="num">02 · Modern</div>
+          <h2>Awesome-CV style</h2>
+          <p>Posquit0's popular template — colored section headers, social icons, modular entries. Slightly more industry-friendly while still credible for research roles.</p>
+          <div class="meta-line">Helvetica swap · 58 KB</div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="awesome.pdf" download>Download PDF</a>
+            <a class="btn" href="awesome.tex" target="_blank">View .tex</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-preview">
+          <img src="preview-altacv.png" alt="Preview of AltaCV two-column style CV first page" loading="lazy">
+        </div>
+        <div class="card-body">
+          <div class="num">03 · Two-Column</div>
+          <h2>AltaCV style</h2>
+          <p>Two-column academic CV with sidebar — profile photo, contact, research interests on the left; education, publications, experience on the right. High information density.</p>
+          <div class="meta-line">Helvetica swap · 90 KB</div>
+          <div class="card-actions">
+            <a class="btn btn-primary" href="altacv.pdf" download>Download PDF</a>
+            <a class="btn" href="altacv.tex" target="_blank">View .tex</a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="note">
+      <strong>Recompile after edits:</strong> all three sources are LaTeX. Tectonic (installed via Homebrew) can rebuild any of them in seconds:
+      <code>cd cv &amp;&amp; tectonic classic.tex</code> — produces <code>classic.pdf</code> in place. The <code>awesome-cv.cls</code> and <code>altacv.cls</code> are vendored locally; fonts have been patched to Helvetica for portable compilation on macOS.
+    </div>
+
+    <a class="back-link" href="../variants/06-al-folio/">← Back to portfolio</a>
+  </main>
+
+  <footer>
+    Sources: classic from scratch · awesome-cv by Posquit0 (MIT) · AltaCV by LianTze Lim (LPPL).
+  </footer>
+</div>
+</body>
+</html>
