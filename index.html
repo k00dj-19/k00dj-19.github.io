@@ -7,7 +7,7 @@
   <meta name="description" content="Portfolio of Kim Dongjin, Integrated M.S.–Ph.D. student at KAIST AI / DAVIAN Lab. Research on Vision-Language-Action (VLA), LLM Safety, and multi-modal learning." />
   <meta property="og:title" content="Kim Dongjin — AI Researcher" />
   <meta property="og:description" content="Integrated M.S.–Ph.D. student at KAIST AI / DAVIAN Lab. VLA · LLM Safety · Multi-modal learning." />
-  <meta property="og:image" content="images/profile_img.jpg" />
+  <meta property="og:image" content="images/profile_img_web.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
   <link rel="stylesheet" href="css/portfolio.css" />
@@ -30,7 +30,7 @@
       <li><a href="#publications">publications</a></li>
       <li><a href="#experience">experience</a></li>
       <li><a href="#talks">talks</a></li>
-      <li><a href="cv/awesome.pdf" target="_blank" rel="noopener">cv</a></li>
+      <li><a href="cv/">cv</a></li>
     </ul>
   </div>
 </nav>
@@ -45,7 +45,7 @@
       <div class="profile-col">
         <img
           class="profile-photo"
-          src="images/profile_img.jpg"
+          src="images/profile_img_web.jpg"
           alt="Portrait of Kim Dongjin"
           width="200" height="200"
         />
@@ -55,7 +55,7 @@
         <ul class="profile-meta">
           <li>
             <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Seoul, South Korea
+            Seongnam, South Korea
           </li>
           <li>
             <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
@@ -64,6 +64,10 @@
           <li>
             <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
             <a href="https://www.linkedin.com/in/dongjin-kim-2447952a0/" target="_blank" rel="noopener">LinkedIn</a>
+          </li>
+          <li>
+            <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 2.5 3 4 6 4s6-1.5 6-4v-5"/></svg>
+            <a href="https://scholar.google.co.kr/citations?user=icG_qkUAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
           </li>
         </ul>
 
@@ -80,21 +84,51 @@
         <h1 id="about-heading">Kim Dongjin</h1>
         <p>
           I am an integrated M.S.–Ph.D. student in the
-          <strong>DAVIAN Lab</strong> at <strong>KAIST AI</strong>,
-          advised by Professor Jaegul Choo.
-          My research interests include
-          Vision-Language-Action (VLA), LLM Safety,
-          and various multi-modal learning tasks.
+          <a href="https://davian.kaist.ac.kr/" target="_blank" rel="noopener"><strong>DAVIAN Lab</strong></a> at <strong>KAIST AI</strong>,
+          advised by Professor <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener">Jaegul Choo</a>.
+          My research centers on
+          <strong>Vision-Language-Action (VLA)</strong> models for robotics.
+        </p>
+
+        <p>
+          This focus grew out of a single thread running through my earlier work.
+          I spent several years on <strong>multi-modal grounding</strong> —
+          localizing sound sources in visual scenes and understanding video —
+          learning to align perception across modalities in space and time, and on
+          <strong>language grounding</strong> through LLM safety and information
+          extraction. VLA is where these threads converge: grounding both
+          perception and language to drive action in the real world.
         </p>
 
         <p class="interests-title">Research Interests</p>
-        <ul class="interests-list" aria-label="Research interests">
-          <li>Vision-Language-Action (VLA)</li>
-          <li>LLM Safety</li>
-          <li>Multi-modal Learning</li>
-          <li>Video Understanding</li>
-          <li>Sound Source Localization</li>
-        </ul>
+        <div class="interests-groups" aria-label="Research interests">
+
+          <div class="interests-group">
+            <span class="interests-group-label">Focus</span>
+            <ul class="interests-list">
+              <li>Vision-Language-Action (VLA)</li>
+              <li>Robot Manipulation</li>
+            </ul>
+          </div>
+
+          <div class="interests-group">
+            <span class="interests-group-label">Multimodal Grounding</span>
+            <ul class="interests-list">
+              <li>Audio-Visual Learning</li>
+              <li>Video Understanding</li>
+              <li>Sound Source Localization</li>
+            </ul>
+          </div>
+
+          <div class="interests-group">
+            <span class="interests-group-label">Language Grounding &amp; Safety</span>
+            <ul class="interests-list">
+              <li>LLM Safety</li>
+              <li>Information Extraction / RAG</li>
+            </ul>
+          </div>
+
+        </div>
       </div>
 
     </div>
@@ -104,6 +138,11 @@
   <section id="news" aria-labelledby="news-heading">
     <h2 class="section-title" id="news-heading">News</h2>
     <ul class="news-list" aria-label="Recent news">
+
+      <li class="news-item">
+        <span class="news-date">Jun 2026</span>
+        <span class="news-text"><a href="https://davian-robotics.github.io/3D_HAMSTER/" target="_blank" rel="noopener"><strong>3D HAMSTER</strong></a> — a hierarchical <strong>Vision-Language-Action</strong> model with 3D trajectory guidance for robot manipulation — accepted to <strong>IROS 2026</strong> (co-first author). Presenting in late Sep 2026.</span>
+      </li>
 
       <li class="news-item">
         <span class="news-date">Apr 2026</span>
@@ -117,7 +156,7 @@
 
       <li class="news-item">
         <span class="news-date">Mar 2025</span>
-        <span class="news-text">Started Integrated M.S.–Ph.D. program at <strong>KAIST AI, DAVIAN Lab</strong>, advised by Prof. Jaegul Choo.</span>
+        <span class="news-text">Started Integrated M.S.–Ph.D. program at <strong>KAIST AI, <a href="https://davian.kaist.ac.kr/" target="_blank" rel="noopener">DAVIAN Lab</a></strong>, advised by Prof. <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener">Jaegul Choo</a>.</span>
       </li>
 
       <li class="news-item">
@@ -137,12 +176,46 @@
   <section id="publications" aria-labelledby="pub-heading">
     <h2 class="section-title" id="pub-heading">Publications</h2>
 
+    <div class="pub-filter" role="group" aria-label="Filter publications by research theme">
+      <button type="button" class="pub-filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="pub-filter-btn" data-filter="vla" aria-pressed="false">VLA</button>
+      <button type="button" class="pub-filter-btn" data-filter="multimodal" aria-pressed="false">Multimodal Grounding</button>
+      <button type="button" class="pub-filter-btn" data-filter="language" aria-pressed="false">Language Grounding</button>
+    </div>
+
     <!-- 2026 -->
     <div class="year-group">
       <p class="year-label">2026</p>
       <ul class="pub-list">
 
-        <li class="pub-item">
+        <li class="pub-item" data-theme="vla">
+          <img
+            class="pub-thumb"
+            src="images/publications/2026iros_hamster.png"
+            alt="Figure for 3D HAMSTER"
+            width="120" height="80"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+          />
+          <div class="pub-thumb-placeholder" style="display:none;" aria-hidden="true">No image</div>
+          <div class="pub-details">
+            <p class="pub-title">3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance</p>
+            <p class="pub-authors">Dongyoon Hwang*, Byungkun Lee*, <strong>Dongjin Kim*</strong>, Hyojin Jang, Hoiyeong Jin, Jueun Mun, Minho Park, Hojoon Lee, Hyunseung Kim, Jaegul Choo <span style="font-size:0.75rem;color:#888;">(*Equal contribution)</span></p>
+            <span class="pub-venue">IROS 2026</span>
+            <ul class="pub-tags" aria-label="Research tags">
+              <li class="pub-tag">#VLA</li>
+              <li class="pub-tag">#Robot Manipulation</li>
+              <li class="pub-tag">#3D Trajectory</li>
+            </ul>
+            <div class="pub-links">
+              <a class="pub-link" href="https://davian-robotics.github.io/3D_HAMSTER/" target="_blank" rel="noopener">[project]</a>
+              <a class="pub-link" href="https://arxiv.org/abs/2606.31329" target="_blank" rel="noopener">[arXiv]</a>
+              <a class="pub-link" href="https://github.com/DAVIAN-Robotics/3D_HAMSTER" target="_blank" rel="noopener">[code]</a>
+              <a class="pub-link" href="https://huggingface.co/DAVIAN-Robotics/3D_HAMSTER" target="_blank" rel="noopener">[model]</a>
+            </div>
+          </div>
+        </li>
+
+        <li class="pub-item" data-theme="language">
           <img
             class="pub-thumb"
             src="images/publications/2026iclr_expguard.png"
@@ -168,7 +241,7 @@
           </div>
         </li>
 
-        <li class="pub-item">
+        <li class="pub-item" data-theme="language">
           <img
             class="pub-thumb"
             src="images/publications/2026iclr_livewebie.png"
@@ -201,7 +274,7 @@
       <p class="year-label">2025</p>
       <ul class="pub-list">
 
-        <li class="pub-item">
+        <li class="pub-item" data-theme="multimodal">
           <img
             class="pub-thumb"
             src="images/publications/2025cvpr.png"
@@ -226,7 +299,7 @@
           </div>
         </li>
 
-        <li class="pub-item">
+        <li class="pub-item" data-theme="multimodal">
           <img
             class="pub-thumb"
             src="images/publications/2025aaai.png"
@@ -260,7 +333,7 @@
       <p class="year-label">2024</p>
       <ul class="pub-list">
 
-        <li class="pub-item">
+        <li class="pub-item" data-theme="multimodal">
           <img
             class="pub-thumb"
             src="images/publications/2024cvpr.png"
@@ -293,7 +366,7 @@
       <p class="year-label">2023</p>
       <ul class="pub-list">
 
-        <li class="pub-item">
+        <li class="pub-item" data-theme="multimodal">
           <img
             class="pub-thumb"
             src="images/publications/2023acmmm.png"
@@ -332,9 +405,9 @@
         <div class="edu-period">2025–Present</div>
         <div class="edu-body">
           <p class="edu-degree">Integrated M.S.–Ph.D. in Artificial Intelligence</p>
-          <p class="edu-inst">KAIST AI · DAVIAN Lab</p>
-          <p class="edu-detail">Advisor: Prof. Jaegul Choo</p>
-          <p class="edu-detail">Research focus: VLA, LLM Safety, multi-modal learning</p>
+          <p class="edu-inst">KAIST AI · <a href="https://davian.kaist.ac.kr/" target="_blank" rel="noopener">DAVIAN Lab</a></p>
+          <p class="edu-detail">Advisor: Prof. <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener">Jaegul Choo</a></p>
+          <p class="edu-detail">Research focus: Vision-Language-Action, multimodal grounding, language grounding &amp; safety</p>
         </div>
       </li>
 
@@ -359,8 +432,8 @@
       <li class="exp-item">
         <div class="exp-period">2025.03–Present</div>
         <div class="exp-body">
-          <p class="exp-role">Integrated M.S.–Ph.D. Student</p>
-          <p class="exp-org">DAVIAN Lab, KAIST AI</p>
+          <p class="exp-role">Graduate Researcher</p>
+          <p class="exp-org">KAIST AI · <a href="https://davian.kaist.ac.kr/" target="_blank" rel="noopener">DAVIAN Lab</a></p>
           <p class="exp-desc">Research on VLA, LLM Safety, and multi-modal learning.</p>
         </div>
       </li>
@@ -387,7 +460,7 @@
         <div class="exp-period">2022.11–2025.02</div>
         <div class="exp-body">
           <p class="exp-role">Undergraduate Researcher</p>
-          <p class="exp-org">Visual AI Lab, Kyung Hee University</p>
+          <p class="exp-org">Kyung Hee University · Visual AI Lab</p>
           <p class="exp-desc">Supervisor: Jung Uk Kim.</p>
         </div>
       </li>
@@ -402,6 +475,15 @@
     <ul class="talk-list" aria-label="Talks and presentations">
 
       <!-- Conference presentations -->
+      <li class="talk-item">
+        <span class="talk-venue-badge">IROS 2026</span>
+        <div>
+          <p class="talk-title">3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance</p>
+          <p class="talk-meta">Upcoming · IROS 2026 · Sep 2026</p>
+          <a class="talk-link" href="https://davian-robotics.github.io/3D_HAMSTER/" target="_blank" rel="noopener">[project]</a>
+        </div>
+      </li>
+
       <li class="talk-item">
         <span class="talk-venue-badge">CVPR 2025</span>
         <div>
@@ -446,7 +528,7 @@
 
 <!-- ===== Footer ===== -->
 <footer>
-  <p>&copy; 2025 Kim Dongjin &mdash; Built with plain HTML/CSS, inspired by <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener">al-folio</a>.</p>
+  <p>&copy; 2026 Kim Dongjin &mdash; Built with plain HTML/CSS, inspired by <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener">al-folio</a>.</p>
 </footer>
 
 <!-- Minimal JS: mobile nav toggle only -->
@@ -466,6 +548,41 @@
       link.addEventListener('click', function () {
         menu.classList.remove('open');
         btn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+
+  // Publications theme filter
+  (function () {
+    var buttons = document.querySelectorAll('.pub-filter-btn');
+    var items = document.querySelectorAll('.pub-item');
+    var groups = document.querySelectorAll('#publications .year-group');
+    if (!buttons.length || !items.length) return;
+
+    function apply(filter) {
+      items.forEach(function (item) {
+        var match = filter === 'all' || item.getAttribute('data-theme') === filter;
+        item.style.display = match ? '' : 'none';
+      });
+      // Hide a year group when none of its items are visible
+      groups.forEach(function (group) {
+        var anyVisible = Array.prototype.some.call(
+          group.querySelectorAll('.pub-item'),
+          function (item) { return item.style.display !== 'none'; }
+        );
+        group.style.display = anyVisible ? '' : 'none';
+      });
+    }
+
+    buttons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        buttons.forEach(function (b) {
+          b.classList.remove('is-active');
+          b.setAttribute('aria-pressed', 'false');
+        });
+        button.classList.add('is-active');
+        button.setAttribute('aria-pressed', 'true');
+        apply(button.getAttribute('data-filter'));
       });
     });
   })();

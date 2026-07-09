@@ -251,6 +251,22 @@ section:last-of-type { border-bottom: none; }
   color: var(--muted);
 }
 
+.interests-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.interests-group-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin-bottom: 0.3rem;
+}
+
 /* ---------- News ---------- */
 #news .news-list {
   list-style: none;
@@ -280,6 +296,37 @@ section:last-of-type { border-bottom: none; }
 .news-text strong { color: var(--text); }
 
 /* ---------- Publications ---------- */
+.pub-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 2rem;
+}
+
+.pub-filter-btn {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--muted);
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.25rem 0.8rem;
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s, border-color 0.12s;
+}
+
+.pub-filter-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.pub-filter-btn.is-active {
+  color: #fff;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
 .year-group { margin-bottom: 2.5rem; }
 
 .year-label {
