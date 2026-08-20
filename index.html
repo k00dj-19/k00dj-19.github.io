@@ -10,7 +10,7 @@
   <meta property="og:image" content="images/profile_img_web.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <link rel="stylesheet" href="css/portfolio.css?v=2" />
+  <link rel="stylesheet" href="css/portfolio.css?v=3" />
 </head>
 <body><!-- education logos are OFF by default; add class="edu-logos-on" to this tag to show them -->
 
@@ -29,7 +29,6 @@
       <li><a href="#education">education</a></li>
       <li><a href="#publications">publications</a></li>
       <li><a href="#experience">experience</a></li>
-      <li><a href="#talks">talks</a></li>
       <li><a href="cv/">cv</a></li>
     </ul>
   </div>
@@ -49,7 +48,7 @@
           alt="Portrait of Kim Dongjin"
           width="200" height="200"
         />
-        <p class="profile-name">Kim Dongjin<br><span style="font-family:var(--sans);font-size:0.75rem;font-weight:400;color:#888;">김동진</span></p>
+        <p class="profile-name">Kim Dongjin<br><span style="font-family:var(--sans);font-size:0.75rem;font-weight:400;color:var(--faint);">김동진</span></p>
         <p class="profile-title">AI Researcher<br>Integrated M.S.–Ph.D. Student<br>KAIST AI · DAVIAN Lab</p>
 
         <ul class="profile-meta">
@@ -101,34 +100,11 @@
         </p>
 
         <p class="interests-title">Research Interests</p>
-        <div class="interests-groups" aria-label="Research interests">
-
-          <div class="interests-group">
-            <span class="interests-group-label">Focus</span>
-            <ul class="interests-list">
-              <li>Vision-Language-Action (VLA)</li>
-              <li>Robot Manipulation</li>
-            </ul>
-          </div>
-
-          <div class="interests-group">
-            <span class="interests-group-label">Multimodal Grounding</span>
-            <ul class="interests-list">
-              <li>Audio-Visual Learning</li>
-              <li>Video Understanding</li>
-              <li>Sound Source Localization</li>
-            </ul>
-          </div>
-
-          <div class="interests-group">
-            <span class="interests-group-label">Language Grounding &amp; Safety</span>
-            <ul class="interests-list">
-              <li>LLM Safety</li>
-              <li>Information Extraction / RAG</li>
-            </ul>
-          </div>
-
-        </div>
+        <ul class="interests-list" aria-label="Research interests">
+          <li>Vision-Language-Action (VLA)</li>
+          <li>Multimodal</li>
+          <li>LLM Safety</li>
+        </ul>
       </div>
 
     </div>
@@ -154,20 +130,8 @@
         <span class="news-text">Presented <strong>Object-aware Sound Source Localization via Audio-Visual Scene Understanding</strong> at <strong>CVPR 2025</strong>, Nashville, TN.</span>
       </li>
 
-      <li class="news-item">
-        <span class="news-date">Mar 2025</span>
-        <span class="news-text">Started Integrated M.S.–Ph.D. program at <strong>KAIST AI, <a href="https://davian.kaist.ac.kr/" target="_blank" rel="noopener">DAVIAN Lab</a></strong>, advised by Prof. <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener">Jaegul Choo</a>.</span>
-      </li>
 
-      <li class="news-item">
-        <span class="news-date">Feb 2025</span>
-        <span class="news-text">Paper accepted at <strong>AAAI 2025</strong> — <em>Watch Video, Catch Keyword: Context-aware Keyword Attention for Moment Retrieval and Highlight Detection</em>.</span>
-      </li>
 
-      <li class="news-item">
-        <span class="news-date">Jun 2024</span>
-        <span class="news-text">Presented <strong>Learning to Visually Localize Sound Sources from Mixtures without Prior Source Knowledge</strong> at <strong>CVPR 2024</strong>, Seattle, WA.</span>
-      </li>
 
     </ul>
   </section>
@@ -179,8 +143,8 @@
     <div class="pub-filter" role="group" aria-label="Filter publications by research theme">
       <button type="button" class="pub-filter-btn is-active" data-filter="all" aria-pressed="true">All</button>
       <button type="button" class="pub-filter-btn" data-filter="vla" aria-pressed="false">VLA</button>
-      <button type="button" class="pub-filter-btn" data-filter="multimodal" aria-pressed="false">Multimodal Grounding</button>
-      <button type="button" class="pub-filter-btn" data-filter="language" aria-pressed="false">Language Grounding</button>
+      <button type="button" class="pub-filter-btn" data-filter="multimodal" aria-pressed="false">Multimodal</button>
+      <button type="button" class="pub-filter-btn" data-filter="language" aria-pressed="false">Language &amp; Safety</button>
     </div>
 
     <!-- 2026 -->
@@ -193,13 +157,13 @@
             class="pub-thumb"
             src="images/publications/2026iros_hamster.png"
             alt="Figure for 3D HAMSTER"
-            width="120" height="80"
+            width="160" height="108"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
           <div class="pub-thumb-placeholder" style="display:none;" aria-hidden="true">No image</div>
           <div class="pub-details">
             <p class="pub-title">3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance</p>
-            <p class="pub-authors">Dongyoon Hwang*, Byungkun Lee*, <strong>Dongjin Kim*</strong>, Hyojin Jang, Hoiyeong Jin, Jueun Mun, Minho Park, Hojoon Lee, Hyunseung Kim, Jaegul Choo <span style="font-size:0.75rem;color:#888;">(*Equal contribution)</span></p>
+            <p class="pub-authors">Dongyoon Hwang*, Byungkun Lee*, <strong>Dongjin Kim*</strong>, Hyojin Jang, Hoiyeong Jin, Jueun Mun, Minho Park, Hojoon Lee, Hyunseung Kim, Jaegul Choo <span style="font-size:0.78rem;color:var(--faint);">(*Equal contribution)</span></p>
             <span class="pub-venue">IROS 2026</span>
             <ul class="pub-tags" aria-label="Research tags">
               <li class="pub-tag">#VLA</li>
@@ -220,13 +184,13 @@
             class="pub-thumb"
             src="images/publications/2026iclr_expguard.png"
             alt="Figure for ExpGuard"
-            width="120" height="80"
+            width="160" height="108"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
           <div class="pub-thumb-placeholder" style="display:none;" aria-hidden="true">No image</div>
           <div class="pub-details">
             <p class="pub-title">ExpGuard: LLM Content Moderation in Specialized Domains</p>
-            <p class="pub-authors">Minseok Choi*, <strong>Dongjin Kim*</strong>, Seungbin Yang, Subin Kim, Youngjun Kwak, Juyoung Oh, Jaegul Choo, Jungmin Son <span style="font-size:0.75rem;color:#888;">(*Equal contribution)</span></p>
+            <p class="pub-authors">Minseok Choi*, <strong>Dongjin Kim*</strong>, Seungbin Yang, Subin Kim, Youngjun Kwak, Juyoung Oh, Jaegul Choo, Jungmin Son <span style="font-size:0.78rem;color:var(--faint);">(*Equal contribution)</span></p>
             <span class="pub-venue">ICLR 2026</span>
             <ul class="pub-tags" aria-label="Research tags">
               <li class="pub-tag">#LLM Safety</li>
@@ -246,7 +210,7 @@
             class="pub-thumb"
             src="images/publications/2026iclr_livewebie.png"
             alt="Figure for LiveWeb-IE"
-            width="120" height="80"
+            width="160" height="108"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
           <div class="pub-thumb-placeholder" style="display:none;" aria-hidden="true">No image</div>
@@ -279,13 +243,13 @@
             class="pub-thumb"
             src="images/publications/2025cvpr.png"
             alt="Figure for Object-aware Sound Source Localization"
-            width="120" height="80"
+            width="160" height="108"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
           <div class="pub-thumb-placeholder" style="display:none;" aria-hidden="true">No image</div>
           <div class="pub-details">
             <p class="pub-title">Object-aware Sound Source Localization via Audio-Visual Scene Understanding</p>
-            <p class="pub-authors">Sung Jin Um*, <strong>Dongjin Kim*</strong>, Sangmin Lee, Jung Uk Kim <span style="font-size:0.75rem;color:#888;">(*Equal contribution)</span></p>
+            <p class="pub-authors">Sung Jin Um*, <strong>Dongjin Kim*</strong>, Sangmin Lee, Jung Uk Kim <span style="font-size:0.78rem;color:var(--faint);">(*Equal contribution)</span></p>
             <span class="pub-venue">CVPR 2025</span>
             <ul class="pub-tags" aria-label="Research tags">
               <li class="pub-tag">#Multi-modal</li>
@@ -295,6 +259,7 @@
             <div class="pub-links">
               <a class="pub-link" href="https://arxiv.org/pdf/2506.18557" target="_blank" rel="noopener">[arXiv]</a>
               <a class="pub-link" href="https://github.com/VisualAIKHU/OA-SSL" target="_blank" rel="noopener">[code]</a>
+              <a class="pub-link" href="https://drive.google.com/file/d/1jiWdDW-M36Kz0_FKCIjJUfNUm4NLBTTj/view?usp=sharing" target="_blank" rel="noopener">[poster]</a>
             </div>
           </div>
         </li>
@@ -304,7 +269,7 @@
             class="pub-thumb"
             src="images/publications/2025aaai.png"
             alt="Figure for Watch Video, Catch Keyword"
-            width="120" height="80"
+            width="160" height="108"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
           <div class="pub-thumb-placeholder" style="display:none;" aria-hidden="true">No image</div>
@@ -338,13 +303,13 @@
             class="pub-thumb"
             src="images/publications/2024cvpr.png"
             alt="Figure for Learning to Visually Localize Sound Sources"
-            width="120" height="80"
+            width="160" height="108"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
           <div class="pub-thumb-placeholder" style="display:none;" aria-hidden="true">No image</div>
           <div class="pub-details">
             <p class="pub-title">Learning to Visually Localize Sound Sources from Mixtures without Prior Source Knowledge</p>
-            <p class="pub-authors"><strong>Dongjin Kim*</strong>, Sung Jin Um*, Sangmin Lee, Jung Uk Kim <span style="font-size:0.75rem;color:#888;">(*Equal contribution)</span></p>
+            <p class="pub-authors"><strong>Dongjin Kim*</strong>, Sung Jin Um*, Sangmin Lee, Jung Uk Kim <span style="font-size:0.78rem;color:var(--faint);">(*Equal contribution)</span></p>
             <span class="pub-venue">CVPR 2024</span>
             <ul class="pub-tags" aria-label="Research tags">
               <li class="pub-tag">#Multi-modal</li>
@@ -354,6 +319,7 @@
             <div class="pub-links">
               <a class="pub-link" href="https://arxiv.org/pdf/2403.17420" target="_blank" rel="noopener">[arXiv]</a>
               <a class="pub-link" href="https://github.com/VisualAIKHU/NoPrior_MultiSSL" target="_blank" rel="noopener">[code]</a>
+              <a class="pub-link" href="https://drive.google.com/file/d/193Kaj39fKGO5P8gANP2YrtEUzGP53D9f/view?usp=sharing" target="_blank" rel="noopener">[poster]</a>
             </div>
           </div>
         </li>
@@ -371,13 +337,13 @@
             class="pub-thumb"
             src="images/publications/2023acmmm.png"
             alt="Figure for Audio-Visual Spatial Integration and Recursive Attention"
-            width="120" height="80"
+            width="160" height="108"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
           />
           <div class="pub-thumb-placeholder" style="display:none;" aria-hidden="true">No image</div>
           <div class="pub-details">
             <p class="pub-title">Audio-Visual Spatial Integration and Recursive Attention for Robust Sound Source Localization</p>
-            <p class="pub-authors">Sung Jin Um*, <strong>Dongjin Kim*</strong>, Jung Uk Kim <span style="font-size:0.75rem;color:#888;">(*Equal contribution)</span></p>
+            <p class="pub-authors">Sung Jin Um*, <strong>Dongjin Kim*</strong>, Jung Uk Kim <span style="font-size:0.78rem;color:var(--faint);">(*Equal contribution)</span></p>
             <span class="pub-venue">ACM MM 2023</span>
             <ul class="pub-tags" aria-label="Research tags">
               <li class="pub-tag">#Multi-modal</li>
@@ -387,6 +353,7 @@
             <div class="pub-links">
               <a class="pub-link" href="https://arxiv.org/pdf/2308.06087" target="_blank" rel="noopener">[arXiv]</a>
               <a class="pub-link" href="https://github.com/VisualAIKHU/SIRA-SSL" target="_blank" rel="noopener">[code]</a>
+              <a class="pub-link" href="https://drive.google.com/file/d/1hsAtNijwl_e8HYFY-YE4gqDRqW5Z518Z/view?usp=sharing" target="_blank" rel="noopener">[poster]</a>
             </div>
           </div>
         </li>
@@ -409,7 +376,7 @@
             <p class="edu-degree">Integrated M.S.–Ph.D. in Artificial Intelligence</p>
             <p class="edu-inst">KAIST AI · <a href="https://davian.kaist.ac.kr/" target="_blank" rel="noopener">DAVIAN Lab</a></p>
             <p class="edu-detail">Advisor: Prof. <a href="https://sites.google.com/site/jaegulchoo/" target="_blank" rel="noopener">Jaegul Choo</a></p>
-            <p class="edu-detail">Research focus: Vision-Language-Action, multimodal grounding, language grounding &amp; safety</p>
+            <p class="edu-detail">Research focus: Vision-Language-Action, multimodal, LLM safety</p>
           </div>
         </div>
       </li>
@@ -474,61 +441,6 @@
     </ul>
   </section>
 
-  <!-- ===== Talks ===== -->
-  <section id="talks" aria-labelledby="talks-heading">
-    <h2 class="section-title" id="talks-heading">Talks &amp; Presentations</h2>
-
-    <ul class="talk-list" aria-label="Talks and presentations">
-
-      <!-- Conference presentations -->
-      <li class="talk-item">
-        <span class="talk-venue-badge">IROS 2026</span>
-        <div>
-          <p class="talk-title">3D HAMSTER: Bridging Planning and Control in Hierarchical Vision Language Action Models through 3D Trajectory Guidance</p>
-          <p class="talk-meta">Upcoming · IROS 2026 · Sep 2026</p>
-          <a class="talk-link" href="https://davian-robotics.github.io/3D_HAMSTER/" target="_blank" rel="noopener">[project]</a>
-        </div>
-      </li>
-
-      <li class="talk-item">
-        <span class="talk-venue-badge">CVPR 2025</span>
-        <div>
-          <p class="talk-title">Object-aware Sound Source Localization via Audio-Visual Scene Understanding</p>
-          <p class="talk-meta">Poster · Nashville, TN, USA · Jun 2025</p>
-          <a class="talk-link" href="https://drive.google.com/file/d/1jiWdDW-M36Kz0_FKCIjJUfNUm4NLBTTj/view?usp=sharing" target="_blank" rel="noopener">[poster]</a>
-        </div>
-      </li>
-
-      <li class="talk-item">
-        <span class="talk-venue-badge">CVPR 2024</span>
-        <div>
-          <p class="talk-title">Learning to Visually Localize Sound Sources from Mixtures without Prior Source Knowledge</p>
-          <p class="talk-meta">Poster · Seattle, WA, USA · Jun 2024</p>
-          <a class="talk-link" href="https://drive.google.com/file/d/193Kaj39fKGO5P8gANP2YrtEUzGP53D9f/view?usp=sharing" target="_blank" rel="noopener">[poster]</a>
-        </div>
-      </li>
-
-      <li class="talk-item">
-        <span class="talk-venue-badge">ACM MM 2023</span>
-        <div>
-          <p class="talk-title">Audio-Visual Spatial Integration and Recursive Attention for Robust Sound Source Localization</p>
-          <p class="talk-meta">Poster · Ottawa, Canada · Oct 2023</p>
-          <a class="talk-link" href="https://drive.google.com/file/d/1hsAtNijwl_e8HYFY-YE4gqDRqW5Z518Z/view?usp=sharing" target="_blank" rel="noopener">[poster]</a>
-        </div>
-      </li>
-
-      <!-- Invited talk -->
-      <li class="talk-item">
-        <span class="talk-venue-badge">Invited Talk 2025</span>
-        <div>
-          <p class="talk-title">"My Experience of CVPR Acceptance as an Undergraduate and Advice for Graduate School"</p>
-          <p class="talk-meta">NexusAI Cohort 2 Final Seminar · Seoul, South Korea · 2025</p>
-          <a class="talk-link" href="https://docs.google.com/presentation/d/1dxXHxFden4PiSRDmVaeSS21DxjGIrmlee7jQmjLEZIk/edit?usp=sharing" target="_blank" rel="noopener">[slides]</a>
-        </div>
-      </li>
-
-    </ul>
-  </section>
 
 </div><!-- /.page-wrap -->
 
