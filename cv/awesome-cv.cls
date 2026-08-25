@@ -383,7 +383,11 @@
 
 % Defines writer's linked-in (optional)
 % Usage: \linkedin{<linked-in-nick>}
-\newcommand*{\linkedin}[1]{\def\@linkedin{#1}}
+% Optional display name: \linkedin[LinkedIn]{<nick>} shows "LinkedIn" but still links to <nick>
+\newcommand*{\linkedin}[2][]{%
+  \def\@linkedin{#2}%
+  \ifempty{#1}{\def\@linkedinname{#2}}{\def\@linkedinname{#1}}%
+}
 
 % Defines writer's orcid (optional)
 % Usage: \orcid{<orcid-num>}
@@ -629,7 +633,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faAlt{LinkedIn: /in/\@linkedin}{\faLinkedin}{\@linkedin}}%
+          \href{https://www.linkedin.com/in/\@linkedin}{\faAlt{LinkedIn: /in/\@linkedin}{\faLinkedin}{\@linkedinname}}%
         }%
       \ifthenelse{\isundefined{\@orcid}}%
         {}%

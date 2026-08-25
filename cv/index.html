@@ -159,6 +159,7 @@
     font-size: 13px;
     color: var(--muted);
   }
+  .grid-single { max-width: 420px; }
   @media (max-width: 600px) {
     .wrap { padding: 40px 20px 64px; }
     .grid { grid-template-columns: 1fr; gap: 18px; }
@@ -170,37 +171,21 @@
   <header>
     <p class="meta">CV · LaTeX · 2026</p>
     <h1>Curriculum Vitae</h1>
-    <p class="lede">Three LaTeX-typeset CV styles for the same content. Pick whichever you'd like to download or use as a template. All sources are open — view or fork the <code>.tex</code> files alongside the PDFs.</p>
+    <p class="lede">LaTeX-typeset academic CV — publications, education, and research experience. The source is open: view or fork the <code>.tex</code> file alongside the PDF.</p>
   </header>
 
   <main>
-    <div class="grid">
+    <div class="grid grid-single">
 
       <article class="card">
         <div class="card-preview">
-          <img src="preview-classic.png" alt="Preview of classic CV first page" loading="lazy">
+          <img src="preview-awesome.png" alt="Preview of the CV first page" loading="lazy">
         </div>
         <div class="card-body">
-          <div class="num">01 · Classic</div>
-          <h2>Steinhardt / Liang style</h2>
-          <p>Minimal academic 1-page. Sans-serif headings, serif body, year-grouped publications, equal-contribution markers. The most common look for CS faculty pages.</p>
-          <div class="meta-line">2 pages · 32 KB</div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="classic.pdf" download>Download PDF</a>
-            <a class="btn" href="classic.tex" target="_blank">View .tex</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="card-preview">
-          <img src="preview-awesome.png" alt="Preview of awesome-cv style CV first page" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="num">02 · Modern</div>
+          <div class="num">Academic CV</div>
           <h2>Awesome-CV style</h2>
-          <p>Posquit0's popular template — colored section headers, social icons, modular entries. Slightly more industry-friendly while still credible for research roles.</p>
-          <div class="meta-line">Helvetica swap · 58 KB</div>
+          <p>Single-column, two pages. Posquit0's template with colored section headers and modular entries — readable for research reviewers and clean to parse for application portals.</p>
+          <div class="meta-line">2 pages &middot; single column &middot; LaTeX</div>
           <div class="card-actions">
             <a class="btn btn-primary" href="awesome.pdf" download>Download PDF</a>
             <a class="btn" href="awesome.tex" target="_blank">View .tex</a>
@@ -208,34 +193,18 @@
         </div>
       </article>
 
-      <article class="card">
-        <div class="card-preview">
-          <img src="preview-altacv.png" alt="Preview of AltaCV two-column style CV first page" loading="lazy">
-        </div>
-        <div class="card-body">
-          <div class="num">03 · Two-Column</div>
-          <h2>AltaCV style</h2>
-          <p>Two-column academic CV with sidebar — profile photo, contact, research interests on the left; education, publications, experience on the right. High information density.</p>
-          <div class="meta-line">Helvetica swap · 90 KB</div>
-          <div class="card-actions">
-            <a class="btn btn-primary" href="altacv.pdf" download>Download PDF</a>
-            <a class="btn" href="altacv.tex" target="_blank">View .tex</a>
-          </div>
-        </div>
-      </article>
-
     </div>
 
     <div class="note">
-      <strong>Recompile after edits:</strong> all three sources are LaTeX. Tectonic (installed via Homebrew) can rebuild any of them in seconds:
-      <code>cd cv &amp;&amp; tectonic classic.tex</code> — produces <code>classic.pdf</code> in place. The <code>awesome-cv.cls</code> and <code>altacv.cls</code> are vendored locally; fonts have been patched to Helvetica for portable compilation on macOS.
+      <strong>Recompile after edits:</strong> the source is LaTeX. Tectonic (installed via Homebrew) rebuilds it in seconds:
+      <code>cd cv &amp;&amp; tectonic awesome.tex</code> — produces <code>awesome.pdf</code> in place. <code>awesome-cv.cls</code> is vendored locally; fonts are patched to Helvetica for portable compilation on macOS.
     </div>
 
     <a class="back-link" href="../index.html">← Back to portfolio</a>
   </main>
 
   <footer>
-    Sources: classic from scratch · awesome-cv by Posquit0 (MIT) · AltaCV by LianTze Lim (LPPL).
+    Template: awesome-cv by Posquit0 (MIT).
   </footer>
 </div>
 </body>
