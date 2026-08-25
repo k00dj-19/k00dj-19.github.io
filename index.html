@@ -10,7 +10,7 @@
   <meta property="og:image" content="images/profile_img_web.jpg" />
   <meta property="og:type" content="website" />
   <meta name="twitter:card" content="summary" />
-  <link rel="stylesheet" href="css/portfolio.css?v=3" />
+  <link rel="stylesheet" href="css/portfolio.css?v=4" />
 </head>
 <body><!-- education logos are OFF by default; add class="edu-logos-on" to this tag to show them -->
 
@@ -608,6 +608,80 @@
         button.classList.add('is-active');
         button.setAttribute('aria-pressed', 'true');
         apply(button.getAttribute('data-filter'));
+      });
+    });
+  })();
+  // Publication figure lightbox
+  (function () {
+    var thumbs = document.querySelectorAll('.pub-thumb');
+    if (!thumbs.length) return;
+
+    var box = null, lastFocus = null;
+
+    function close() {
+      if (!box) return;
+      box.remove();
+      box = null;
+      document.body.classList.remove('lightbox-open');
+      if (lastFocus) lastFocus.focus();
+    }
+
+    function open(thumb) {
+      close();
+      lastFocus = thumb;
+
+      var item = thumb.closest('.pub-item');
+      var title = item ? item.querySelector('.pub-title') : null;
+
+      box = document.createElement('div');
+      box.className = 'lightbox';
+      box.setAttribute('role', 'dialog');
+      box.setAttribute('aria-modal', 'true');
+      box.setAttribute('aria-label', title ? title.textContent : 'Publication figure');
+
+      var close_ = document.createElement('button');
+      close_.className = 'lightbox-close';
+      close_.setAttribute('aria-label', 'Close');
+      close_.innerHTML = '&times;';
+
+      var full = document.createElement('img');
+      full.src = thumb.src;
+      full.alt = thumb.alt;
+
+      box.appendChild(close_);
+      box.appendChild(full);
+
+      if (title) {
+        var cap = document.createElement('p');
+        cap.className = 'lightbox-caption';
+        cap.textContent = title.textContent;
+        box.appendChild(cap);
+      }
+
+      // click the backdrop (not the image) to dismiss
+      box.addEventListener('click', function (e) {
+        if (e.target !== full) close();
+      });
+
+      document.body.appendChild(box);
+      document.body.classList.add('lightbox-open');
+      close_.focus();
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (box && e.key === 'Escape') close();
+    });
+
+    thumbs.forEach(function (thumb) {
+      thumb.setAttribute('role', 'button');
+      thumb.setAttribute('tabindex', '0');
+      thumb.setAttribute('aria-label', 'Enlarge figure');
+      thumb.addEventListener('click', function () { open(thumb); });
+      thumb.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          open(thumb);
+        }
       });
     });
   })();
