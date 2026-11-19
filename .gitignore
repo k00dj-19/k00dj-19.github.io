@@ -16,3 +16,6 @@
 # Editor
 *.swp
 *.swo
+
+# Internal CV build (with ongoing research) - keep off the public site
+cv/awesome-internal.pdf
