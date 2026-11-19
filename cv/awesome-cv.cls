@@ -111,6 +111,8 @@
 % PATCHED: original Source Sans 3 / Roboto variable fonts couldn't resolve
 % named instances (Light, Bold Italic) under Tectonic+fontspec. Swapped to
 % Helvetica (system) which is static and reliably available on macOS.
+% If Helvetica can't be found, falls back to TeX Gyre Heros + Roboto Light.
+\IfFontExistsTF{Helvetica}{%
 \setmainfont{Helvetica}[
   UprightFont=*,
   ItalicFont=*-Oblique,
@@ -135,6 +137,42 @@
   FontFace={l}{n}{Font=*-Light},
   FontFace={l}{it}{Font=*-LightOblique},
 ]
+}{%
+  % FALLBACK: when system Helvetica isn't visible (e.g. Linux or sandboxed
+  % builds), use TeX Gyre Heros (a Helvetica clone shipped with TeX) for
+  % regular/bold and Roboto Light for the light series. Small caps are
+  % turned off to match the Helvetica build (Helvetica has none).
+  \setmainfont{texgyreheros}[
+    Extension=.otf,
+    UprightFont=*-regular,
+    ItalicFont=*-italic,
+    BoldFont=*-bold,
+    BoldItalicFont=*-bolditalic,
+    SmallCapsFont={},
+    FontFace={l}{n}{Font=Roboto-Light.otf},
+    FontFace={l}{it}{Font=Roboto-LightItalic.otf},
+  ]
+  \setsansfont{texgyreheros}[
+    Extension=.otf,
+    UprightFont=*-regular,
+    ItalicFont=*-italic,
+    BoldFont=*-bold,
+    BoldItalicFont=*-bolditalic,
+    SmallCapsFont={},
+    FontFace={l}{n}{Font=Roboto-Light.otf},
+    FontFace={l}{it}{Font=Roboto-LightItalic.otf},
+  ]
+  \newfontfamily\roboto{texgyreheros}[
+    Extension=.otf,
+    UprightFont=*-regular,
+    ItalicFont=*-italic,
+    BoldFont=*-bold,
+    BoldItalicFont=*-bolditalic,
+    SmallCapsFont={},
+    FontFace={l}{n}{Font=Roboto-Light.otf},
+    FontFace={l}{it}{Font=Roboto-LightItalic.otf},
+  ]
+}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs
